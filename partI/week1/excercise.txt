@@ -1,0 +1,19 @@
+1 - nlog(n)
+2 - True
+3 - Never
+4 - nk^2
+
+
+5 -
+
+a> n^0.5		-  1/2 log n
+b> 10^n			-  n log 10
+c> n^1.5		-  1.5 log n
+d> 2^((log n)^0.5)	
+e> n^1.6		- 1.6 log n
+
+adceb
+
+(log n)^ 1/2 log 2
+
+
