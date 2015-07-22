@@ -77,23 +77,27 @@ public class Quick {
   *Implementation left as an exercise.
   */
     private static void choosePivot(Comparable[] a, int lo, int hi, position pp) {
-        switch (pp) {
+    	int median = lo;
+    	switch (pp) {
         	case left:
         		break;
         	case mid:
         		//int m = (lo + hi)/2;
         		int m = lo + (hi - lo)/2;
 
-        		if (less(a[m], a[lo]))
-        			exch(a, m, lo);
+        		if ( (less(a[lo], a[m]) && less(a[m], a[hi])) || (less(a[hi], a[m]) && less(a[m], a[lo])) ) {
+        			median = m;
+        		}
 
-        		if (less(a[hi], a[lo]))
-        			exch(a, hi, lo);
+        		if ( (less(a[m], a[lo]) && less(a[lo], a[hi])) || (less(a[hi], a[lo]) && less(a[lo], a[m])) ) {
+        			median = lo;
+        		}
+        		
+        		if ( (less(a[lo], a[hi]) && less(a[hi], a[m])) || (less(a[m], a[hi]) && less(a[hi], a[lo])) ) {
+        			median = hi;
+        		}
 
-        		if (less(a[hi], a[m]))
-        			exch(a, hi, m);
-
-    			exch(a, lo, m);        		
+    			exch(a, lo, median);
         		break;
         	case right:
                 exch(a, lo, hi);
